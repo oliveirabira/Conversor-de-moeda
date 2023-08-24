@@ -47,7 +47,33 @@ function convertValues() {
 
 }
 
+function changeCurrency () {
+    const currencyName = document.getElementById("currency-name")
+    const currencyImage = document.querySelector(".currency-img")
 
+    if (currencySelect.value == "dolar") {
+        currencyName.innerHTML = "Dolar Americano"
+        currencyImage.src = "./assets/dolar.png"
+    }
 
+    if (currencySelect.value == "euro") {
+        currencyName.innerHTML = "Euro"
+        currencyImage.src = "./assets/euro.png"
+    }
 
-convertButton.addEventListener("click", convertValues)
+    if (currencySelect.value == "libra") {
+        currencyName.innerHTML = "Libra"
+        currencyImage.src = "./assets/libra.png"
+    }
+    
+    if (currencySelect.value == "bitcoin") {
+        currencyName.innerHTML = "Bitcoin"
+        currencyImage.src = "./assets/bitcoin.png"
+    }
+
+    convertValues()
+    
+}
+
+currencySelect.addEventListener("change",changeCurrency)  //Ouvinte no select quando muda o valor
+convertButton.addEventListener("click", convertValues) //Ouvinte no click quando muda o valor
