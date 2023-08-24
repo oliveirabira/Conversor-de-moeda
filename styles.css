@@ -1,0 +1,100 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    background-color: #004aad;
+}
+
+.logo {
+    width: 384px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 20px auto;
+}
+
+main {
+    width: 375px;
+    border-radius: 20px;
+    background: #dce7f5;
+    margin: 0 auto 40px;
+    padding: 44px 24px 23px;
+}
+
+label {
+    color: #777777;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+select, input {
+    width: 100%;
+    border: 1px solid #BBB;
+    background: #FFF;
+    margin-bottom: 24px;
+    appearance: none;
+    padding-left: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #555555;
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    background: #004aad;
+    width: 100%;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 700;
+    width: 327px;
+    right: 48px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:active {
+    opacity: 0.6;
+}
+
+section {
+    border-radius: 20px;
+    border: 2px solid #004aad;
+    margin-top: 36px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arrow-img {
+    margin: 15px;
+}
+
+.currency-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.currency {
+    color: #777777;
+    font-size: 14px;
+}
+
+.currency-value, .currency-value-to-convert {
+    color: #555555;
+    font-size: 20px;
+    font-weight: 700;
+}
