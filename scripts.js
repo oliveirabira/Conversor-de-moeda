@@ -1,13 +1,15 @@
 
 const convertButton = document.querySelector(".convert-button")
-const currencySelect = document.querySelector(".currency-select") //Está pegando o tipo de moeda selecionada
+const currencySelect = document.querySelector(".currency-select") //Está pegando o tipo de moeda selecionada no Converter para
+const currencyToSelect = document.querySelector(".currency-to-select") //Está pegando o tipo de moeda selecionada no Converter de
 
 function convertValues() {
     const inputCurrencyValue = document.querySelector(".input-currency").value
     const currencyValueToConvert = document.querySelector(".currency-value-to-convert") //Valor em Real
     const currencyValueConverted = document.querySelector(".currency-value") //Outras moedas
 
-    console.log(currencySelect.value)
+    //console.log(currencySelect.value)
+    console.log(currencyToSelect.value)
 
     const dolarToday = 4.93
     const euroToday = 5.35
@@ -20,6 +22,7 @@ function convertValues() {
     const wonToday = 0.0037
     const ieneToday = 0.0033
     const yuanToday = 0.67
+    const realToday = 4.87
 
     if (currencySelect.value == "dolar") {  //Se o select estiver selecionado o valor de dolar entre aqui
         currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
@@ -88,10 +91,137 @@ function convertValues() {
         }).format(inputCurrencyValue / yuanToday)
     }
 
-    currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-    }).format(inputCurrencyValue) //Vai jogar o valor em real para a tela
+
+
+
+    if (currencyToSelect.value == "real") {
+        currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        }).format(inputCurrencyValue) //Vai jogar o valor em real para a tela
+        
+    }
+
+    if (currencyToSelect.value == "dolar") {
+        currencyValueToConvert.innerHTML = new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD"
+        }).format(inputCurrencyValue)
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD"
+        }).format(inputCurrencyValue * currencySelect)
+    }
+
+    if (currencyToSelect.value == "euro") {
+        currencyValueToConvert.innerHTML = new Intl.NumberFormat("de-DE", {
+            style: "currency",
+            currency: "EUR"
+        }).format(inputCurrencyValue)
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("de-DE", {
+            style: "currency",
+            currency: "EUR"
+        }).format(inputCurrencyValue * euroToday)
+    }
+
+    if (currencyToSelect.value == "libra") {
+        currencyValueToConvert.innerHTML = new Intl.NumberFormat("en-GB", {
+            style: "currency",
+            currency: "GBP"
+        }).format(inputCurrencyValue)
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("en-GB", {
+            style: "currency",
+            currency: "GBP"
+        }).format(inputCurrencyValue * libraToday)
+    }
+
+    if (currencyToSelect.value == "bitcoin") {
+        currencyValueToConvert.innerHTML = new Intl.NumberFormat("de-DE", {
+            style: "currency",
+            currency: "BTC"
+        }).format(inputCurrencyValue)
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("de-DE", {
+            style: "currency",
+            currency: "BTC"
+        }).format(inputCurrencyValue * bitcoinToday)
+    }
+
+    if (currencyToSelect.value == "baht") {
+        currencyValueToConvert.innerHTML = new Intl.NumberFormat("th-TH", {
+            style: "currency",
+            currency: "THB"
+        }).format(inputCurrencyValue)
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("th-TH", {
+            style: "currency",
+            currency: "THB"
+        }).format(inputCurrencyValue * bahtToday)
+    }
+
+    if (currencyToSelect.value == "lira-turca") {
+        currencyValueToConvert.innerHTML = new Intl.NumberFormat("tr-TR", {
+            style: "currency",
+            currency: "TRY"
+        }).format(inputCurrencyValue)
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("tr-TR", {
+            style: "currency",
+            currency: "TRY"
+        }).format(inputCurrencyValue * liraToday)
+    }
+
+    if (currencyToSelect.value == "rublo-russo") {
+        currencyValueToConvert.innerHTML = new Intl.NumberFormat("ru-RU", {
+            style: "currency",
+            currency: "RUB"
+        }).format(inputCurrencyValue)
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("ru-RU", {
+            style: "currency",
+            currency: "RUB"
+        }).format(inputCurrencyValue * rubloToday)
+    }
+
+    if (currencyToSelect.value == "rupia-indiana") {
+        currencyValueToConvert.innerHTML = new Intl.NumberFormat("hi-IN", {
+            style: "currency",
+            currency: "INR"
+        }).format(inputCurrencyValue)
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("hi-IN", {
+            style: "currency",
+            currency: "INR"
+        }).format(inputCurrencyValue * ruppiaToday)
+    }
+
+    if (currencyToSelect.value == "won") {
+        currencyValueToConvert.innerHTML = new Intl.NumberFormat("ko-KR", {
+            style: "currency",
+            currency: "KRW"
+        }).format(inputCurrencyValue)
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("ko-KR", {
+            style: "currency",
+            currency: "KRW"
+        }).format(inputCurrencyValue * wonToday)
+    }
+
+    if (currencyToSelect.value == "iene") {
+        currencyValueToConvert.innerHTML = new Intl.NumberFormat("ja-JP", {
+            style: "currency",
+            currency: "JPY"
+        }).format(inputCurrencyValue)
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("ja-JP", {
+            style: "currency",
+            currency: "JPY"
+        }).format(inputCurrencyValue * ieneToday)
+    }
+
+    if (currencyToSelect.value == "yuan") {
+        currencyValueToConvert.innerHTML = new Intl.NumberFormat("zn-CN", {
+            style: "currency",
+            currency: "CNY"
+        }).format(inputCurrencyValue)
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("zn-CN", {
+            style: "currency",
+            currency: "CNY"
+        }).format(inputCurrencyValue * yuanToday)
+    }
 
 
 }
@@ -99,6 +229,7 @@ function convertValues() {
 function changeCurrency() {
     const currencyName = document.getElementById("currency-name")
     const currencyImage = document.querySelector(".currency-img")
+    const convertFrom = document.getElementById(".convert-from")
 
     if (currencySelect.value == "dolar") {
         currencyName.innerHTML = "Dolar Americano"
@@ -161,3 +292,4 @@ function changeCurrency() {
 
 currencySelect.addEventListener("change", changeCurrency)  //Ouvinte no select quando muda o valor
 convertButton.addEventListener("click", convertValues) //Ouvinte no click quando muda o valor
+currencyToSelect.addEventListener("change", changeCurrency)
